@@ -13,6 +13,8 @@
     text-align: center;
     color: #EED575;
     font-family: 'Playfair Display', serif; }
+  #board .first-col {
+    padding: 0; }
   #board .zero {
     text-align: right;
     border: 1px solid white;
@@ -29,7 +31,9 @@
       background-color: #505050; }
   #board .range2 {
     text-align: center;
-    border: 1px solid white; }
+    border: 1px solid white;
+    height: 5vh;
+    line-height: 5vh; }
     #board .range2:hover {
       background-color: #505050; }
   #board .which-row {
@@ -50,16 +54,18 @@
       background-color: #505050; }
   #board .range3 {
     text-align: center;
-    border: 1px solid white; }
+    border: 1px solid white;
+    height: 5vh;
+    line-height: 5vh; }
     #board .range3:hover {
       background-color: #505050; }
   #board .spin {
     border: 1px solid white;
-    height: 10vh;
-    line-height: 10vh;
     text-align: left;
     padding-left: 0.5em;
-    background-color: blue; }
+    background-color: blue;
+    height: 10vh;
+    line-height: 10vh; }
     #board .spin:hover {
       background-color: #505050; }
 

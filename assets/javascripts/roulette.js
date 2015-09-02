@@ -1,7 +1,22 @@
+var selected_numbers = [];
+var unique_selection = [];
+
 $(document).ready(function() {
   $('.spin').click(function() {
     number_to_guess();
   }); 
+  $('.num, .zero, .which-row, .range2, .range3').click(function() {
+    selected_numbers.push($(this).html());
+    var unique_selection = selected_numbers.reduce(function(a,b) {
+      if (a.indexOf(b) < 0) a.push(b);
+      return a;
+    }, []);
+    console.log(unique_selection);
+  });
+  $('.num, .zero, .which-row, .range2, .range3').dblclick(function() {
+    selected_numbers.pop($(this).html());
+    console.log(selected_numbers);
+  });
 })
 
 $(function() {
@@ -31,3 +46,5 @@ function number_to_guess() {
   console.log(number_random);
   $('.preview').html("THE RANDOM NUMBER THAT HAS BEEN GENERATED IS = " + number_random);
 }
+
+

@@ -18,6 +18,10 @@ $num_height: 10vh;
     color: #EED575;
     font-family: 'Playfair Display', serif;
   }
+
+  .first-col {
+    padding: 0;
+  }
   .zero {
     text-align: right;
     border: 1px solid white;
@@ -43,6 +47,8 @@ $num_height: 10vh;
   .range2{
     text-align: center;
     border: 1px solid white;
+    height: 0.5*$num_height;
+    line-height: 0.5*$num_height;
 
     &:hover {
       background-color: lighten(#434343, 5%);
@@ -77,6 +83,8 @@ $num_height: 10vh;
   .range3{
     text-align: center;
     border: 1px solid white;
+    height: 0.5*$num_height;
+    line-height: 0.5*$num_height;
 
     &:hover {
       background-color: lighten(#434343, 5%);
@@ -84,11 +92,11 @@ $num_height: 10vh;
   }
   .spin{
     border: 1px solid white;
-    height: $num_height;
-    line-height: $num_height;
     text-align: left;
     padding-left: 0.5em;
     background-color: blue;
+    height: $num_height;
+    line-height: $num_height;
 
     &:hover {
       background-color: lighten(#434343, 5%);
