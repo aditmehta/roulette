@@ -6,26 +6,66 @@
     border: 1px solid white;
     height: 30vh;
     line-height: 30vh; }
+    #board .zero:hover {
+      background-color: #505050; }
+    #board .zero:active {
+      background-color: #ffff33;
+      color: black; }
   #board .num {
     border: 1px solid white;
     height: 10vh;
     line-height: 10vh;
     text-align: center; }
+    #board .num:hover {
+      background-color: #505050; }
+    #board .num:active {
+      background-color: #ffff33; }
+  #board .range2 {
+    text-align: center;
+    border: 1px solid white; }
+    #board .range2:hover {
+      background-color: #505050; }
+    #board .range2:active {
+      background-color: #ffff33; }
   #board .which-row {
     border: 1px solid white;
     height: 10vh;
     line-height: 10vh;
     text-align: left;
     padding-left: 0.5em; }
+    #board .which-row:hover {
+      background-color: #505050; }
+    #board .which-row:active {
+      background-color: #ffff33; }
   #board .red {
     background-color: red; }
+    #board .red:hover {
+      background-color: #ff4d4d; }
+    #board .red:active {
+      background-color: #ffff33; }
   #board .black {
     background-color: black; }
+    #board .black:hover {
+      background-color: #505050; }
+    #board .black:active {
+      background-color: #ffff33; }
   #board .range3 {
     text-align: center;
     border: 1px solid white; }
-  #board .range2 {
-    text-align: center;
-    border: 1px solid white; }
+    #board .range3:hover {
+      background-color: #505050; }
+    #board .range3:active {
+      background-color: #ffff33; }
+  #board .spin {
+    border: 1px solid white;
+    height: 10vh;
+    line-height: 10vh;
+    text-align: left;
+    padding-left: 0.5em;
+    background-color: blue; }
+    #board .spin:hover {
+      background-color: #505050; }
+    #board .spin:active {
+      background-color: #ffff33; }
 
 /*# sourceMappingURL=styles.css.map */

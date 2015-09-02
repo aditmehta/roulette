@@ -9,6 +9,14 @@ $num_height: 10vh;
     border: 1px solid white;
     height: 3*$num_height;
     line-height: 3*$num_height;
+
+    &:hover {
+      background-color: lighten(#434343, 5%);
+    }
+    &:active {
+      background-color: lighten(yellow, 10%);
+      color: black;
+    }
   }
 
   .num {
@@ -16,29 +24,85 @@ $num_height: 10vh;
     height: $num_height;
     line-height: $num_height;
     text-align: center;
+    
+    &:hover {
+      background-color: lighten(#434343, 5%);
+    }
+    &:active {
+      background-color: lighten(yellow, 10%);
+    }
   }
   
+  .range2{
+    text-align: center;
+    border: 1px solid white;
+
+    &:hover {
+      background-color: lighten(#434343, 5%);
+    }
+    &:active {
+      background-color: lighten(yellow, 10%);
+    }
+  }
   .which-row {
     border: 1px solid white;
     height: $num_height;
     line-height: $num_height;
     text-align: left;
     padding-left: 0.5em;
+
+    &:hover {
+      background-color: lighten(#434343, 5%);
+    }
+    &:active {
+      background-color: lighten(yellow, 10%);
+    }
   }
 
   .red{
     background-color: red;
-    
+
+    &:hover {
+      background-color: lighten(red, 15%);
+    }
+    &:active {
+      background-color: lighten(yellow, 10%);
+    }
   }
   .black{
     background-color: black;
+
+    &:hover {
+      background-color: lighten(#434343, 5%);
+    }
+    &:active {
+      background-color: lighten(yellow, 10%);
+    }
   }
   .range3{
     text-align: center;
     border: 1px solid white;
+
+    &:hover {
+      background-color: lighten(#434343, 5%);
+    }
+    &:active {
+      background-color: lighten(yellow, 10%);
+    }
   }
-  .range2{
-    text-align: center;
+  .spin{
     border: 1px solid white;
+    height: $num_height;
+    line-height: $num_height;
+    text-align: left;
+    padding-left: 0.5em;
+    background-color: blue;
+
+    &:hover {
+      background-color: lighten(#434343, 5%);
+    }
+    &:active {
+      background-color: lighten(yellow, 10%);
+    }
   }
 }
