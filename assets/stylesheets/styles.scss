@@ -17,10 +17,6 @@ $num_height: 10vh;
     &:hover {
       background-color: lighten(#434343, 5%);
     }
-    &:active {
-      background-color: lighten(yellow, 10%);
-      color: black;
-    }
   }
 
 
@@ -33,9 +29,6 @@ $num_height: 10vh;
     &:hover {
       background-color: lighten(#434343, 5%);
     }
-    &:active {
-      background-color: lighten(yellow, 10%);
-    }
   }
 
   .range2{
@@ -44,9 +37,6 @@ $num_height: 10vh;
 
     &:hover {
       background-color: lighten(#434343, 5%);
-    }
-    &:active {
-      background-color: lighten(yellow, 10%);
     }
   }
   .which-row {
@@ -59,9 +49,6 @@ $num_height: 10vh;
     &:hover {
       background-color: lighten(#434343, 5%);
     }
-    &:active {
-      background-color: lighten(yellow, 10%);
-    }
   }
 
   .red{
@@ -70,18 +57,12 @@ $num_height: 10vh;
     &:hover {
       background-color: lighten(red, 15%);
     }
-    &:active {
-      background-color: lighten(yellow, 10%);
-    }
   }
   .black{
     background-color: black;
 
     &:hover {
       background-color: lighten(#434343, 5%);
-    }
-    &:active {
-      background-color: lighten(yellow, 10%);
     }
   }
   .range3{
@@ -90,9 +71,6 @@ $num_height: 10vh;
 
     &:hover {
       background-color: lighten(#434343, 5%);
-    }
-    &:active {
-      background-color: lighten(yellow, 10%);
     }
   }
   .spin{
@@ -105,9 +83,6 @@ $num_height: 10vh;
 
     &:hover {
       background-color: lighten(#434343, 5%);
-    }
-    &:active {
-      background-color: lighten(yellow, 10%);
     }
   }
 }
