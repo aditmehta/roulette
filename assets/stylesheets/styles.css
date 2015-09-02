@@ -1,3 +1,7 @@
+::selection {
+  background-color: transparent;
+  color: inherit; }
+
 #board {
   background-color: green;
   color: #FFFFFF; }

@@ -1,4 +1,8 @@
 $num_height: 10vh;
+::selection {
+  background-color: transparent;
+  color: inherit;
+}
 
 #board {
   background-color: green;
@@ -19,12 +23,13 @@ $num_height: 10vh;
     }
   }
 
+
   .num {
     border: 1px solid white;
     height: $num_height;
     line-height: $num_height;
     text-align: center;
-    
+
     &:hover {
       background-color: lighten(#434343, 5%);
     }
@@ -32,7 +37,7 @@ $num_height: 10vh;
       background-color: lighten(yellow, 10%);
     }
   }
-  
+
   .range2{
     text-align: center;
     border: 1px solid white;
