@@ -2,9 +2,17 @@
   background-color: transparent;
   color: inherit; }
 
+.preview {
+  text-align: center;
+  font-family: 'Playfair Display', serif; }
+
 #board {
   background-color: green;
   color: #FFFFFF; }
+  #board h1 {
+    text-align: center;
+    color: #EED575;
+    font-family: 'Playfair Display', serif; }
   #board .zero {
     text-align: right;
     border: 1px solid white;

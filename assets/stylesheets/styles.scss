@@ -4,10 +4,20 @@ $num_height: 10vh;
   color: inherit;
 }
 
+  .preview{
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+  }
+
 #board {
   background-color: green;
   color: #FFFFFF;
   
+  h1{
+    text-align: center;
+    color: #EED575;
+    font-family: 'Playfair Display', serif;
+  }
   .zero {
     text-align: right;
     border: 1px solid white;
@@ -18,7 +28,6 @@ $num_height: 10vh;
       background-color: lighten(#434343, 5%);
     }
   }
-
 
   .num {
     border: 1px solid white;
