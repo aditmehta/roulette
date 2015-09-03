@@ -97,14 +97,25 @@ body {
     text-align: left;
     font-family: 'Playfair Display', serif;
     font-size: 2em; }
+  #features .outcome {
+    text-align: center; }
+    #features .outcome .answer-shell {
+      text-align: center;
+      width: 13vh;
+      position: absolute;
+      right: 50%;
+      left: 50%;
+      height: 15vh; }
+    #features .outcome .answer {
+      text-align: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 6em;
+      line-height: 13vh; }
   #features .preview {
     text-align: center;
     font-family: 'Playfair Display', serif;
-    font-size: 2em; }
-  #features .answer {
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-    font-size: 8em; }
+    font-size: 2em;
+    padding-bottom: 1em; }
   #features .info-links {
     text-align: center;
     font-size: 1.5em; }
