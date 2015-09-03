@@ -242,15 +242,15 @@ var Game = {
     $('.red').css('background', 'red');
     $('.black').css('background', 'black');
     Game.previousRoundScore -= 0;
-    $('.winnings').html("WIN/LOSS: 0");
+    $('.winnings').html("WIN/LOSS IN CURRENT GAME: 0");
   },
   roundCost: function() {
     Game.previousRoundScore -= Game.userSelection.length;
-    $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);
+    $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore);
   },
   resetRoundScore: function() {
     Game.previousRoundScore = 0;
-    $('.winnings').html("WIN/LOSS: 0");
+    $('.winnings').html("WIN/LOSS IN CURRENT GAME: 0");
   },
   enoughPointsCheck: function() {
     if (Game.userSelection.length > Game.score) {
