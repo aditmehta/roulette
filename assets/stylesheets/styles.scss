@@ -4,23 +4,26 @@ $num_height: 10vh;
   color: inherit;
 }
 
-  .preview{
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-  }
-
-  .score {
-    font-size: 10em;
-    font-weight: 700;
-  }
-
+.score{
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+}
+body {
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+}
 #board {
-  background-color: green;
   color: #FFFFFF;
+  font-weight: bold;
+  font-size: 1.3em;
   
   h1{
     text-align: center;
-    color: #EED575;
+    color: #FDFF9D;
+    font-size: 4em;
+    font-weight: bold;
+    padding: 0.5em 0 0.5em;
     font-family: 'Playfair Display', serif;
   }
 
@@ -32,6 +35,8 @@ $num_height: 10vh;
     border: 1px solid white;
     height: 3*$num_height;
     line-height: 3*$num_height;
+    padding-right: 1em;
+    font-size: 1.7em;
 
     &:hover {
       background-color: lighten(#434343, 5%);
@@ -106,5 +111,53 @@ $num_height: 10vh;
     &:hover {
       background-color: lighten(#434343, 5%);
     }
+  }
+}
+
+#features{
+  font-weight: bold;
+  color: #FDFF9D;
+  font-family: 'Playfair Display', serif;
+
+  h2{
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    padding: 0.5em 0 0.5em;
+  }
+
+  .selections{
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+  }
+
+  .winnings{
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+  }
+  .preview{
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+  }
+  .answer{
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 8em;
+    // padding-right: 1.5em;
+  }
+  .info-links {
+    text-align: center;
+    font-size: 1.5em;
+
+    .i-link {
+      padding: 0.5em 0 0.5em;
+      text-decoration: none;
+    }
+  }
+  .game-info {
+    padding: 0.5em 0 0.5em;
   }
 }

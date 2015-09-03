@@ -1,22 +1,27 @@
 var Game = {
   init: function() {
     $('.spin').click(function() {
-      Game.scoreUpdate();
-      Game.numberToGuess();
-      Game.checkNumber();
-      Game.rangeThreeCheck();
-      Game.rangeTwoCheck();
-      Game.colorCheck();
-      Game.rowCheck();
-      Game.oddEvenCheck();
-      Game.gameOverCheck();
-      Game.clearSelection();
+      Game.enoughPointsCheck();
+      // Game.resetRoundScore();
+      // Game.scoreUpdate();
+      // Game.numberToGuess();
+      // Game.roundCost();
+      // Game.checkNumber();
+      // Game.rangeThreeCheck();
+      // Game.rangeTwoCheck();
+      // Game.colorCheck();
+      // Game.rowCheck();
+      // Game.oddEvenCheck();
+      // Game.gameOverCheck();
+      // Game.clearSelection();
     }); 
     $('.num, .zero, .which-row, .range2, .range3').click(function() {
       Game.selectNumber($(this).html());
+      $('.selections').html("CURRENT NUMBER OF SELECTIONS: " + Game.userSelection.length);
     });
     $('.num, .zero, .which-row, .range2, .range3').dblclick(function() {
       Game.removeSelection($(this).html());
+      $('.selections').html("CURRENT NUMBER OF SELECTIONS: " + Game.userSelection.length);
     });
     $('.zero, .range3, .range2, .which-row').click( function() {
       $(this).css('background', 'blue')
@@ -41,12 +46,14 @@ var Game = {
     });
     $('.clear-board').click( function() {
       Game.clearSelection();
+      $('.selections').html("CURRENT NUMBER OF SELECTIONS: 0");
     });
 
   },
   userSelection: [],
+  previousRoundScore: 0,
   numberRandom: -1,
-  score: 100,
+  score: 5,
   red: ["1", "3", "5", "7", "9", "12", "14", "16", "18", "19", "21", "23", "25", "27", "30", "32", "34", "36"],
   black: ["2", "4", "6", "8", "10", "11", "13", "15", "17", "20", "22", "24", "26", "28", "29", "31", "33", "35"],
   thirdRow: ["3", "6", "9", "12", "15", "18", "21", "24", "27", "30", "33", "36"],
@@ -70,18 +77,20 @@ var Game = {
     var limit= 37;
     Game.numberRandom = Math.floor(Math.random() * limit);
     // console.log(numberRandom);
-    $('.preview').html("THE RANDOM NUMBER THAT HAS BEEN GENERATED IS = " + Game.numberRandom);  
+    $('.answer').html(Game.numberRandom);  
   },
   scoreUpdate: function() {
     Game.score = Game.score - Game.userSelection.length;
-    $('.score').html(Game.score);
+    $('.score').html("YOUR CURRENT SCORE IS: " + Game.score);
   },
   checkNumber: function() {
     var numInd = Game.userSelection.indexOf(''+Game.numberRandom);
     console.log(Game.numberRandom.toString());
     if(numInd != -1) {
       Game.score += 36;
-      $('.score').html(Game.score);
+      $('.score').html("YOUR CURRENT SCORE IS: " + Game.score);
+      Game.previousRoundScore += 36;
+      $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);
     }
   },
   rangeThreeCheck: function() {
@@ -91,19 +100,25 @@ var Game = {
     else if (Game.numberRandom < 13) {
       if (Game.userSelection.indexOf("1 to 12") != -1) {
         Game.score += 3;
-        $('.score').html(Game.score);  
+        $('.score').html("YOUR CURRENT SCORE IS: " + Game.score);
+        Game.previousRoundScore += 3;
+        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);  
       };
     }
     else if (Game.numberRandom > 24) {
       if (Game.userSelection.indexOf("25 to 36") != -1) {
         Game.score += 3;
-        $('.score').html(Game.score);  
+        $('.score').html("YOUR CURRENT SCORE IS: " + Game.score);
+        Game.previousRoundScore += 3;
+        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);  
       };
     }
     else {
       if (Game.userSelection.indexOf("13 to 24") != -1) {
         Game.score += 3;
-        $('.score').html(Game.score);  
+        $('.score').html("YOUR CURRENT SCORE IS: " + Game.score);
+        Game.previousRoundScore += 3;
+        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);  
       };
     }
   },
@@ -114,13 +129,17 @@ var Game = {
     else if (Game.numberRandom < 19) {
       if (Game.userSelection.indexOf("1 to 18") != -1) {
         Game.score += 2;
-        $('.score').html(Game.score);  
+        $('.score').html("YOUR CURRENT SCORE IS: " + Game.score);
+        Game.previousRoundScore += 2;
+        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);
       };
     }
     else {
       if (Game.userSelection.indexOf("19 to 36") != -1) {
         Game.score += 2;
-        $('.score').html(Game.score);  
+        $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
+        Game.previousRoundScore += 2;
+        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
       };
     }
   },
@@ -131,13 +150,17 @@ var Game = {
     else if (Game.red.indexOf(''+Game.numberRandom) != -1) {
       if (Game.userSelection.indexOf("RED") != -1) {
         Game.score += 2;
-        $('.score').html(Game.score);  
+        $('.score').html("YOUR CURRENT SCORE IS: " + Game.score);  
+        Game.previousRoundScore += 2;
+        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);
       };  
     } 
     else {
       if (Game.userSelection.indexOf("BLACK") != -1) {
         Game.score += 2;
-        $('.score').html(Game.score);  
+        $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
+        Game.previousRoundScore += 2;
+        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
       };
     }
   },
@@ -148,19 +171,25 @@ var Game = {
     else if (Game.thirdRow.indexOf(''+Game.numberRandom) != -1) {
       if (Game.userSelection.indexOf("3RD ROW") != -1) {
         Game.score += 3;
-        $('.score').html(Game.score);  
+        $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
+        Game.previousRoundScore += 3;
+        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
       };  
     }
     else if (Game.secondRow.indexOf(''+Game.numberRandom) != -1) {
       if (Game.userSelection.indexOf("2ND ROW") != -1) {
         Game.score += 3;
-        $('.score').html(Game.score);  
+        $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
+        Game.previousRoundScore += 3;
+        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
       };  
     } 
     else {
       if (Game.firstRow.indexOf("1ST ROW") != -1) {
         Game.score += 3;
-        $('.score').html(Game.score);  
+        $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
+        Game.previousRoundScore += 3;
+        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
       };
     }
   },
@@ -171,19 +200,23 @@ var Game = {
     else if (Game.numberRandom%2 == 0) {
       if (Game.userSelection.indexOf("EVEN") != -1) {
         Game.score += 2;
-        $('.score').html(Game.score);  
+        $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
+        Game.previousRoundScore += 2;
+        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
       };
     }
     else {
       if (Game.userSelection.indexOf("ODD") != -1) {
         Game.score += 2;
-        $('.score').html(Game.score);  
+        $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
+        Game.previousRoundScore += 2;
+        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
       };
     }
   },
   gameOverCheck: function() {
     if (Game.score < 1) {
-      if (confirm("Press ok to start a new game!") == true) {
+      if (confirm("GAME OVER! Press ok to start a new game!") == true) {
         location.reload();
       }
     }
@@ -198,6 +231,34 @@ var Game = {
     $('.zero, .range3, .range2, .which-row').css('background', 'transparent');
     $('.red').css('background', 'red');
     $('.black').css('background', 'black');
+    Game.previousRoundScore -= 0;
+    $('.winnings').html("WIN/LOSS: 0");
+  },
+  roundCost: function() {
+    Game.previousRoundScore -= Game.userSelection.length;
+    $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);
+  },
+  resetRoundScore: function() {
+    Game.previousRoundScore = 0;
+    $('.winnings').html("WIN/LOSS: 0");
+  },
+  enoughPointsCheck: function() {
+    if (Game.userSelection.length > Game.score) {
+      alert("you do not have enough points to continue");
+    }
+    else {
+      Game.resetRoundScore();
+      Game.scoreUpdate();
+      Game.numberToGuess();
+      Game.roundCost();
+      Game.checkNumber();
+      Game.rangeThreeCheck();
+      Game.rangeTwoCheck();
+      Game.colorCheck();
+      Game.rowCheck();
+      Game.oddEvenCheck();
+      Game.gameOverCheck();      
+    }
   }
 };
 

@@ -2,20 +2,25 @@
   background-color: transparent;
   color: inherit; }
 
-.preview {
-  text-align: center;
-  font-family: 'Playfair Display', serif; }
-
 .score {
-  font-size: 10em;
-  font-weight: 700; }
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 2em; }
+
+body {
+  background-image: url("../images/background.jpg");
+  background-size: cover; }
 
 #board {
-  background-color: green;
-  color: #FFFFFF; }
+  color: #FFFFFF;
+  font-weight: bold;
+  font-size: 1.3em; }
   #board h1 {
     text-align: center;
-    color: #EED575;
+    color: #FDFF9D;
+    font-size: 4em;
+    font-weight: bold;
+    padding: 0.5em 0 0.5em;
     font-family: 'Playfair Display', serif; }
   #board .first-col {
     padding: 0; }
@@ -23,7 +28,9 @@
     text-align: right;
     border: 1px solid white;
     height: 30vh;
-    line-height: 30vh; }
+    line-height: 30vh;
+    padding-right: 1em;
+    font-size: 1.7em; }
     #board .zero:hover {
       background-color: #505050; }
   #board .num {
@@ -72,5 +79,39 @@
     line-height: 10vh; }
     #board .spin:hover {
       background-color: #505050; }
+
+#features {
+  font-weight: bold;
+  color: #FDFF9D;
+  font-family: 'Playfair Display', serif; }
+  #features h2 {
+    text-align: center;
+    font-size: 3em;
+    font-weight: bold;
+    padding: 0.5em 0 0.5em; }
+  #features .selections {
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 2em; }
+  #features .winnings {
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 2em; }
+  #features .preview {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2em; }
+  #features .answer {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 8em; }
+  #features .info-links {
+    text-align: center;
+    font-size: 1.5em; }
+    #features .info-links .i-link {
+      padding: 0.5em 0 0.5em;
+      text-decoration: none; }
+  #features .game-info {
+    padding: 0.5em 0 0.5em; }
 
 /*# sourceMappingURL=styles.css.map */
