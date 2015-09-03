@@ -1,15 +1,20 @@
 var Game = {
   init: function() {
     $('.spin').click(function() {
+      Game.scoreUpdate();
       Game.numberToGuess();
+      Game.checkNumber();
+      Game.rangeThreeCheck();
+      Game.rangeTwoCheck();
+      Game.colorCheck();
+      Game.rowCheck();
+      Game.oddEvenCheck();
     }); 
     $('.num, .zero, .which-row, .range2, .range3').click(function() {
       Game.selectNumber($(this).html());
-      Game.scoreUpdate();
     });
     $('.num, .zero, .which-row, .range2, .range3').dblclick(function() {
       Game.removeSelection($(this).html());
-      Game.scoreUpdate();
     });
     $('.zero, .range3, .range2, .which-row').click( function() {
       $(this).css('background', 'blue')
@@ -32,6 +37,7 @@ var Game = {
 
   },
   userSelection: [],
+  numberRandom: -1,
   score: 100,
   red: ["1", "3", "5", "7", "9", "12", "14", "16", "18", "19", "21", "23", "25", "27", "30", "32", "34", "36"],
   black: ["2", "4", "6", "8", "10", "11", "13", "15", "17", "20", "22", "24", "26", "28", "29", "31", "33", "35"],
@@ -54,16 +60,119 @@ var Game = {
   },
   numberToGuess: function() {
     var limit= 37;
-    var numberRandom = Math.floor(Math.random() * limit);
-    console.log(numberRandom);
-    $('.preview').html("THE RANDOM NUMBER THAT HAS BEEN GENERATED IS = " + numberRandom);  
+    Game.numberRandom = Math.floor(Math.random() * limit);
+    // console.log(numberRandom);
+    $('.preview').html("THE RANDOM NUMBER THAT HAS BEEN GENERATED IS = " + Game.numberRandom);  
   },
   scoreUpdate: function() {
-    Game.score = 100;
     Game.score = Game.score - Game.userSelection.length;
     $('.score').html(Game.score);
+  },
+  checkNumber: function() {
+    var numInd = Game.userSelection.indexOf(''+Game.numberRandom);
+    console.log(Game.numberRandom.toString());
+    if(numInd != -1) {
+      Game.score += 36;
+      $('.score').html(Game.score);
+    }
+  },
+  rangeThreeCheck: function() {
+    if (Game.numberRandom == 0) {
+      Game.score += 0;
+    }
+    else if (Game.numberRandom < 13) {
+      if (Game.userSelection.indexOf("1 to 12") != -1) {
+        Game.score += 3;
+        $('.score').html(Game.score);  
+      };
+    }
+    else if (Game.numberRandom > 24) {
+      if (Game.userSelection.indexOf("25 to 36") != -1) {
+        Game.score += 3;
+        $('.score').html(Game.score);  
+      };
+    }
+    else {
+      if (Game.userSelection.indexOf("13 to 24") != -1) {
+        Game.score += 3;
+        $('.score').html(Game.score);  
+      };
+    }
+  },
+  rangeTwoCheck: function() {
+    if (Game.numberRandom == 0) {
+      Game.score += 0;
+    }
+    else if (Game.numberRandom < 19) {
+      if (Game.userSelection.indexOf("1 to 18") != -1) {
+        Game.score += 2;
+        $('.score').html(Game.score);  
+      };
+    }
+    else {
+      if (Game.userSelection.indexOf("19 to 36") != -1) {
+        Game.score += 2;
+        $('.score').html(Game.score);  
+      };
+    }
+  },
+  colorCheck: function() {
+    if (Game.numberRandom == 0) {
+      Game.score += 0;
+    }
+    else if (Game.red.indexOf(''+Game.numberRandom) != -1) {
+      if (Game.userSelection.indexOf("RED") != -1) {
+        Game.score += 2;
+        $('.score').html(Game.score);  
+      };  
+    } 
+    else {
+      if (Game.userSelection.indexOf("BLACK") != -1) {
+        Game.score += 2;
+        $('.score').html(Game.score);  
+      };
+    }
+  },
+  rowCheck: function() {
+    if (Game.numberRandom == 0) {
+      Game.score += 0;
+    }
+    else if (Game.thirdRow.indexOf(''+Game.numberRandom) != -1) {
+      if (Game.userSelection.indexOf("3RD ROW") != -1) {
+        Game.score += 3;
+        $('.score').html(Game.score);  
+      };  
+    }
+    else if (Game.secondRow.indexOf(''+Game.numberRandom) != -1) {
+      if (Game.userSelection.indexOf("2ND ROW") != -1) {
+        Game.score += 3;
+        $('.score').html(Game.score);  
+      };  
+    } 
+    else {
+      if (Game.firstRow.indexOf("1ST ROW") != -1) {
+        Game.score += 3;
+        $('.score').html(Game.score);  
+      };
+    }
+  },
+  oddEvenCheck: function() {
+    if (Game.numberRandom == 0) {
+      Game.score += 0;
+    }
+    else if (Game.numberRandom%2 == 0) {
+      if (Game.userSelection.indexOf("EVEN") != -1) {
+        Game.score += 2;
+        $('.score').html(Game.score);  
+      };
+    }
+    else {
+      if (Game.userSelection.indexOf("ODD") != -1) {
+        Game.score += 2;
+        $('.score').html(Game.score);  
+      };
+    }
   }
-
 };
 
 $(document).ready(function() {
