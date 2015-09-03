@@ -1,5 +1,6 @@
 var selected_numbers = [];
 var unique_selection = [];
+var index = -1;
 
 $(document).ready(function() {
   $('.spin').click(function() {
@@ -7,15 +8,17 @@ $(document).ready(function() {
   }); 
   $('.num, .zero, .which-row, .range2, .range3').click(function() {
     selected_numbers.push($(this).html());
-    var unique_selection = selected_numbers.reduce(function(a,b) {
+    unique_selection = selected_numbers.reduce(function(a,b) {
       if (a.indexOf(b) < 0) a.push(b);
       return a;
     }, []);
     console.log(unique_selection);
   });
   $('.num, .zero, .which-row, .range2, .range3').dblclick(function() {
-    selected_numbers.pop($(this).html());
-    console.log(selected_numbers);
+    index = unique_selection.indexOf($(this).html());
+    if (index > -1) {
+      splice_index(index, unique_selection);
+    };
   });
 })
 
@@ -47,4 +50,7 @@ function number_to_guess() {
   $('.preview').html("THE RANDOM NUMBER THAT HAS BEEN GENERATED IS = " + number_random);
 }
 
-
+function splice_index(n, x) {
+  x.splice(n, 1);
+  console.log(x);
+}
