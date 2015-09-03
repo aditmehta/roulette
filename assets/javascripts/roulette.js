@@ -80,13 +80,13 @@ var Game = {
     $('.answer').html(Game.numberRandom);
 
     if (Game.numberRandom == 0) {
-      Game.score += 0;
+      $('.answer').css('background', 'transparent');
     }
     else if (Game.red.indexOf(''+Game.numberRandom) != -1) {
-      $('.answer').css('background', 'red')  
+      $('.answer').css('background', 'red');  
     } 
     else {
-      $('.answer').css('background', 'black')
+      $('.answer').css('background', 'black');
     }
   },
   scoreUpdate: function() {
