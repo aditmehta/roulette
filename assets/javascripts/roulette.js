@@ -77,7 +77,17 @@ var Game = {
     var limit= 37;
     Game.numberRandom = Math.floor(Math.random() * limit);
     // console.log(numberRandom);
-    $('.answer').html(Game.numberRandom);  
+    $('.answer').html(Game.numberRandom);
+
+    if (Game.numberRandom == 0) {
+      Game.score += 0;
+    }
+    else if (Game.red.indexOf(''+Game.numberRandom) != -1) {
+      $('.answer').css('background', 'red')  
+    } 
+    else {
+      $('.answer').css('background', 'black')
+    }
   },
   scoreUpdate: function() {
     Game.score = Game.score - Game.userSelection.length;
