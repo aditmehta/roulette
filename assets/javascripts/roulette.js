@@ -9,6 +9,8 @@ var Game = {
       Game.colorCheck();
       Game.rowCheck();
       Game.oddEvenCheck();
+      Game.gameOverCheck();
+      Game.clearSelection();
     }); 
     $('.num, .zero, .which-row, .range2, .range3').click(function() {
       Game.selectNumber($(this).html());
@@ -33,6 +35,12 @@ var Game = {
     });
     $('.black').dblclick( function() {
       $(this).css('background', 'black')
+    });
+    $('.new-game').click( function() {
+      Game.newGame();
+    });
+    $('.clear-board').click( function() {
+      Game.clearSelection();
     });
 
   },
@@ -172,6 +180,24 @@ var Game = {
         $('.score').html(Game.score);  
       };
     }
+  },
+  gameOverCheck: function() {
+    if (Game.score < 1) {
+      if (confirm("Press ok to start a new game!") == true) {
+        location.reload();
+      }
+    }
+  },
+  newGame: function () {
+    if (confirm("Are you sure you want to start a new game? Click ok to confirm") == true) {
+      location.reload();
+    };
+  },
+  clearSelection: function() {
+    Game.userSelection = [];
+    $('.zero, .range3, .range2, .which-row').css('background', 'transparent');
+    $('.red').css('background', 'red');
+    $('.black').css('background', 'black');
   }
 };
 
