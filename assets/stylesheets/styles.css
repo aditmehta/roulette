@@ -2,16 +2,18 @@
   background-color: transparent;
   color: inherit; }
 
-.preview {
-  text-align: center;
-  font-family: 'Playfair Display', serif; }
+.score {
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 25px; }
 
 #board {
-  background-color: green;
-  color: #FFFFFF; }
+  background-image: url("../images/background.jpg");
+  color: #FFFFFF;
+  font-weight: bold; }
   #board h1 {
     text-align: center;
-    color: #EED575;
+    color: #FDFF9D;
     font-family: 'Playfair Display', serif; }
   #board .first-col {
     padding: 0; }
@@ -19,7 +21,8 @@
     text-align: right;
     border: 1px solid white;
     height: 30vh;
-    line-height: 30vh; }
+    line-height: 30vh;
+    padding-right: 1em; }
     #board .zero:hover {
       background-color: #505050; }
   #board .num {
@@ -68,5 +71,25 @@
     line-height: 10vh; }
     #board .spin:hover {
       background-color: #505050; }
+
+#features {
+  background-image: url("../images/background.jpg");
+  font-weight: bold;
+  color: #FDFF9D;
+  font-family: 'Playfair Display', serif; }
+  #features h2 {
+    text-align: center; }
+  #features .selections {
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px; }
+  #features .winnings {
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px; }
+  #features .preview {
+    text-align: right;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px; }
 
 /*# sourceMappingURL=styles.css.map */

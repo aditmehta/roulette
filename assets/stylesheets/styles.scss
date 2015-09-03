@@ -4,18 +4,20 @@ $num_height: 10vh;
   color: inherit;
 }
 
-  .preview{
-    text-align: center;
-    font-family: 'Playfair Display', serif;
-  }
+.score{
+  text-align: left;
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+}
 
 #board {
-  background-color: green;
+  background-image: url('../images/background.jpg');
   color: #FFFFFF;
+  font-weight: bold;
   
   h1{
     text-align: center;
-    color: #EED575;
+    color: #FDFF9D;
     font-family: 'Playfair Display', serif;
   }
 
@@ -27,6 +29,7 @@ $num_height: 10vh;
     border: 1px solid white;
     height: 3*$num_height;
     line-height: 3*$num_height;
+    padding-right: 1em;
 
     &:hover {
       background-color: lighten(#434343, 5%);
@@ -101,5 +104,33 @@ $num_height: 10vh;
     &:hover {
       background-color: lighten(#434343, 5%);
     }
+  }
+}
+
+#features{
+  background-image: url('../images/background.jpg');
+  font-weight: bold;
+  color: #FDFF9D;
+  font-family: 'Playfair Display', serif;
+
+  h2{
+    text-align: center;
+  }
+
+  .selections{
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+  }
+
+  .winnings{
+    text-align: left;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+  }
+  .preview{
+    text-align: right;
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
   }
 }
