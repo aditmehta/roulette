@@ -100,7 +100,7 @@ var Game = {
       Game.score += 36;
       $('.score').html("YOUR CURRENT SCORE IS: " + Game.score);
       Game.previousRoundScore += 36;
-      $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);
+      $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore);
     }
   },
   rangeThreeCheck: function() {
@@ -112,7 +112,7 @@ var Game = {
         Game.score += 3;
         $('.score').html("YOUR CURRENT SCORE IS: " + Game.score);
         Game.previousRoundScore += 3;
-        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);  
+        $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore);  
       };
     }
     else if (Game.numberRandom > 24) {
@@ -120,7 +120,7 @@ var Game = {
         Game.score += 3;
         $('.score').html("YOUR CURRENT SCORE IS: " + Game.score);
         Game.previousRoundScore += 3;
-        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);  
+        $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore);  
       };
     }
     else {
@@ -128,7 +128,7 @@ var Game = {
         Game.score += 3;
         $('.score').html("YOUR CURRENT SCORE IS: " + Game.score);
         Game.previousRoundScore += 3;
-        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);  
+        $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore);  
       };
     }
   },
@@ -141,7 +141,7 @@ var Game = {
         Game.score += 2;
         $('.score').html("YOUR CURRENT SCORE IS: " + Game.score);
         Game.previousRoundScore += 2;
-        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);
+        $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore);
       };
     }
     else {
@@ -149,7 +149,7 @@ var Game = {
         Game.score += 2;
         $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
         Game.previousRoundScore += 2;
-        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
+        $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore); 
       };
     }
   },
@@ -162,7 +162,7 @@ var Game = {
         Game.score += 2;
         $('.score').html("YOUR CURRENT SCORE IS: " + Game.score);  
         Game.previousRoundScore += 2;
-        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore);
+        $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore);
       };  
     } 
     else {
@@ -170,7 +170,7 @@ var Game = {
         Game.score += 2;
         $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
         Game.previousRoundScore += 2;
-        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
+        $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore); 
       };
     }
   },
@@ -183,7 +183,7 @@ var Game = {
         Game.score += 3;
         $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
         Game.previousRoundScore += 3;
-        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
+        $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore); 
       };  
     }
     else if (Game.secondRow.indexOf(''+Game.numberRandom) != -1) {
@@ -191,7 +191,7 @@ var Game = {
         Game.score += 3;
         $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
         Game.previousRoundScore += 3;
-        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
+        $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore); 
       };  
     } 
     else {
@@ -199,7 +199,7 @@ var Game = {
         Game.score += 3;
         $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
         Game.previousRoundScore += 3;
-        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
+        $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore); 
       };
     }
   },
@@ -212,7 +212,7 @@ var Game = {
         Game.score += 2;
         $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
         Game.previousRoundScore += 2;
-        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
+        $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore); 
       };
     }
     else {
@@ -220,7 +220,7 @@ var Game = {
         Game.score += 2;
         $('.score').html("YOUR CURRENT SCORE IS: " + Game.score); 
         Game.previousRoundScore += 2;
-        $('.winnings').html("WIN/LOSS: " + Game.previousRoundScore); 
+        $('.winnings').html("WIN/LOSS IN CURRENT GAME: " + Game.previousRoundScore); 
       };
     }
   },
