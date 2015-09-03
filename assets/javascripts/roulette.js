@@ -243,6 +243,8 @@ var Game = {
     $('.black').css('background', 'black');
     Game.previousRoundScore -= 0;
     $('.winnings').html("WIN/LOSS IN CURRENT GAME: 0");
+    $('.answer').html("");
+    $('.answer').css('background', 'transparent');
   },
   roundCost: function() {
     Game.previousRoundScore -= Game.userSelection.length;
