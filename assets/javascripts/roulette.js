@@ -17,7 +17,7 @@ $(document).ready(function() {
     selected_numbers.pop($(this).html());
     console.log(selected_numbers);
   });
-})
+});
 
 $(function() {
   $('.zero, .range3, .range2, .which-row').click( function() {
