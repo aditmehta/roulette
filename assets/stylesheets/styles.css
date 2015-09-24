@@ -76,7 +76,8 @@ body {
     padding-left: 0.5em;
     background-color: blue;
     height: 10vh;
-    line-height: 10vh; }
+    line-height: 10vh;
+    font-size: 0.9em; }
     #board .spin:hover {
       background-color: #505050; }
 

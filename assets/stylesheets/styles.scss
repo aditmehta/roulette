@@ -107,6 +107,7 @@ body {
     background-color: blue;
     height: $num_height;
     line-height: $num_height;
+    font-size: 0.9em;
 
     &:hover {
       background-color: lighten(#434343, 5%);
